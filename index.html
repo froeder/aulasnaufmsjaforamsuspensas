@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aulas ufms estâo suspensas?</title>
+    <title>Aulas na UFMS já foram suspensas?</title>
 </head>
-<body>
+<script>
+    var dark = false
+</script>
+<body id="divDark">
+    <button onclick="darkMode(dark)">Dark Mode</button>
     <div style="text-align: center; font-size: 5em;">
-        <h1>SIM</h1>
+        <h1 id="textDark">SIM</h1>
     </div>
 </body>
 </html>
@@ -19,4 +23,32 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-160833257-1');
+</script>
+<style>
+    .darkModeDiv {
+        background-color: #000;
+    }
+    .darkModeText {
+        color: #ffffff;
+    }
+    .whiteModeDiv {
+        background-color: #ffffff;
+    }
+    .whiteModeText {
+        color: #000000;
+    }
+    
+</style>
+<script>
+    function darkMode(dark) {
+        this.dark = !dark
+        if(this.dark){
+            document.getElementById("divDark").className = "darkModeDiv";
+            document.getElementById("textDark").className = "darkModeText";
+        } else {
+            document.getElementById("divDark").className = "whiteModeDiv";
+            document.getElementById("textDark").className = "whiteModeText";
+        }
+        
+    }
 </script>
